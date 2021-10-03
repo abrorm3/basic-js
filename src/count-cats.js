@@ -15,10 +15,9 @@ import { NotImplementedError } from "../extensions/index.js";
  *
  */
 export default function countCats(matrix) {
-  let number = [];
-  for (let i = 0; i < matrix.length; i++) {
-    if (matrix[i] == "^^") {
-      number++;
-    }
-  }
+  let result = 0;
+  matrix.map((item) => {
+    result += item.filter((value) => value == "^^").length;
+  });
+  return result;
 }
